@@ -60,7 +60,7 @@ binary_tree_t *binary_tree_parent(binary_tree_t *node);
 
 /* ############# UTILS ############# */
 
-void binary_tree_print(const binary_tree_t *tree);
 size_t _height(const binary_tree_t *tree);
+void binary_tree_print(const binary_tree_t *tree);
 
 #endif
