@@ -22,6 +22,7 @@ static int print_t(const binary_tree_t *tree, int offset, int depth, char **s)
 
 	if (!tree)
 		return (0);
+
 	is_left = (tree->parent && tree->parent->left == tree);
 	width = sprintf(b, "(%03d)", tree->n);
 	left = print_t(tree->left, offset, depth + 1, s);
@@ -50,7 +51,7 @@ static int print_t(const binary_tree_t *tree, int offset, int depth, char **s)
  *
  * Return: The height of the tree starting at @node
  */
-static size_t _height(const binary_tree_t *tree)
+size_t _height(const binary_tree_t *tree)
 {
 	size_t height_l;
 	size_t height_r;
