@@ -2,16 +2,14 @@
 
 /**
  * binary_tree_delete - delete a node from binary tree
- * @parent: parent node
- * @value: int value
- * Return: node value
+ * @tree: binary tree
  */
 void binary_tree_delete(binary_tree_t *tree)
 {
 
 	if (!tree)
 		return;
-	
+
 	if (tree->left)
 	{
 		binary_tree_delete(tree->left);
@@ -21,6 +19,6 @@ void binary_tree_delete(binary_tree_t *tree)
 	{
 		binary_tree_delete(tree->right);
 	}
-	
+
 	free(tree);
 }
