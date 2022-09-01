@@ -55,6 +55,24 @@ int balance(const binary_tree_t *tree)
 }
 
 /**
+ * is_perfect - returns true if the binary tree is perfect
+ *
+ * @tree: binary tree
+ * Return: true if the binary tree is perfect
+ */
+
+int is_perfect(const binary_tree_t *tree)
+{
+	if (!tree)
+		return (0);
+	if (!!tree->left ^ !!tree->right)
+		return (0);
+	if (tree->left && tree->right)
+		return (!balance(tree) && (is_perfect(tree->left) && is_perfect(tree->right)));
+	return (1);
+}
+
+/**
  * binary_tree_is_perfect - returns true if the binary tree is perfect
  *
  * @tree: binary tree
@@ -63,11 +81,6 @@ int balance(const binary_tree_t *tree)
 
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	if (!tree)
-		return (0);
-	if (!!tree->left ^ !!tree->right)
-		return (0);
-	if (tree->left && tree->right)
-		return ((!balance(tree)) && (binary_tree_is_perfect(tree->left) && binary_tree_is_perfect(tree->right)));
-	return (1);
+	return (is_perfect(tree));
 }
+
