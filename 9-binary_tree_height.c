@@ -2,7 +2,7 @@
 
 /**
  * binary_tree_height - calculates height of the tree
- * 
+ *
  * @tree: binary tree
  * Return: height of the tree
  */
