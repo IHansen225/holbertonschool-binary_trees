@@ -37,13 +37,13 @@ size_t height(const binary_tree_t *tree)
 }
 
 /**
- * balance - checks if a binary tree is balanced
+ * bal - checks if a binary tree is balanced
  *
  * @tree: binary tree
  * Return: balance factor
  */
 
-int balance(const binary_tree_t *tree)
+int bal(const binary_tree_t *tree)
 {
 	size_t l, r;
 
@@ -68,7 +68,7 @@ int is_perfect(const binary_tree_t *tree)
 	if (!!tree->left ^ !!tree->right)
 		return (0);
 	if (tree->left && tree->right)
-		return (!balance(tree) && (is_perfect(tree->left) && is_perfect(tree->right)));
+		return (!bal(tree) && (is_perfect(tree->left) && is_perfect(tree->right)));
 	return (1);
 }
 
